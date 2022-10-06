@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.zip.Inflater
 
 class AdapterClass(context: Context,private val medal:ArrayList<Madllist>, private val number:List<Int>,private val listener:(Madllist)->Unit):RecyclerView.Adapter<AdapterClass.ViewHolder>(){
@@ -38,8 +39,6 @@ class AdapterClass(context: Context,private val medal:ArrayList<Madllist>, priva
             country.text=list.country
             goldMedal.text=(list.gold+list.bronze+list.silver).toString()
             view.setOnClickListener {
-
-                Toast.makeText(it.context,list.country+" has won "+ list.gold.toString()+ " gold Medals", Toast.LENGTH_SHORT).show()
                 listener(list)
             }
         }
