@@ -21,6 +21,7 @@ class AdapterClass(context: Context,private val medal:ArrayList<Madllist>, priva
         private val country:TextView=view.findViewById(R.id.country)//in the layout custom
         private val goldMedal:TextView=view.findViewById(R.id.goldMedal)
         private val layout:ConstraintLayout=view.findViewById(R.id.layout)
+        private val ioc:TextView=view.findViewById(R.id.ioc)
         private var numberArray=number
         fun bind(list:Madllist)
         {
@@ -37,6 +38,7 @@ class AdapterClass(context: Context,private val medal:ArrayList<Madllist>, priva
             }
 
             country.text=list.country
+            ioc.text=list.ioc
             goldMedal.text=(list.gold+list.bronze+list.silver).toString()
             view.setOnClickListener {
                 listener(list)
